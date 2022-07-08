@@ -13,15 +13,13 @@ export class App extends Component {
 
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
-    const total = good + neutral + bad;
-    return total;
+    return good + neutral + bad;
   };
 
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     const total = this.countTotalFeedback();
-    const positiveFeedback = ((good / total) * 100).toFixed(0);
-    return positiveFeedback;
+    return ((good / total) * 100).toFixed(0);
   };
 
   onLeaveFeedback = name => {
